@@ -1,1 +1,1 @@
-This tic Tac Toe game will be play with computer or AI
+This Tic Tac Toe game will be play with computer or AI

@@ -1,0 +1,59 @@
+{
+    "game": {
+      "player": "O",
+      "ai": "X",
+      "turnO": true,
+      "winPatterns": [
+        [0, 1, 2],
+        [0, 3, 6],
+        [0, 4, 8],
+        [1, 4, 7],
+        [2, 5, 8],
+        [2, 4, 6],
+        [3, 4, 5],
+        [6, 7, 8]
+      ],
+      "messages": {
+        "winner": "Congratulations🎉, The winner is {{winner}}",
+        "draw": "It's a draw!🤝"
+      }
+    },
+    "ui": {
+      "boxes": ".box",
+      "resetBtn": "#reset-btn",
+      "newGameBtn": "#new-btn",
+      "mgsContainer": ".mgs-container",
+      "mgs": "#mgs"
+    },
+    "actions": {
+      "resetGame": {
+        "turnO": true,
+        "action": "enableBoxes"
+      },
+      "disableBoxes": {
+        "action": "disableAllBoxes"
+      },
+      "enableBoxes": {
+        "action": "enableAllBoxes"
+      },
+      "showWinner": {
+        "winnerMessage": "winner",
+        "action": "disableBoxes"
+      },
+      "aiMove": {
+        "strategy": [
+          {
+            "name": "blockPlayer",
+            "condition": "blockPlayerMove",
+            "action": "blockMove"
+          },
+          {
+            "name": "randomMove",
+            "condition": "noBlockingNeeded",
+            "action": "randomPick"
+          }
+        ]
+      }
+    }
+  }
+  
